@@ -1,0 +1,328 @@
+{
+  "evaluation_dataset": {
+    "source": "Unseen Held-Out Test Set",
+    "total_samples": 1409,
+    "retained_count": 1035,
+    "churned_count": 374,
+    "churn_rate_pct": 26.54
+  },
+  "metric_definitions_note": {
+    "Average_Precision_AP": "Calculated via sklearn average_precision_score (weighted mean of precisions at each threshold), distinct from trapezoidal rule PR-AUC which can overestimate area.",
+    "ROC_AUC": "Measures ranking concordance (discrimination), distinct from probability calibration."
+  },
+  "model_metrics": {
+    "Logistic Regression": {
+      "Model": "Logistic Regression",
+      "Accuracy": 0.7381,
+      "Precision": 0.5043,
+      "Recall (Sensitivity)": 0.7834,
+      "Specificity": 0.7217,
+      "F1-Score": 0.6136,
+      "ROC-AUC": 0.8417,
+      "Average Precision (AP)": 0.6331,
+      "False Positive Rate (FPR)": 0.2783,
+      "False Negative Rate (FNR)": 0.2166,
+      "True Negatives (TN)": 747,
+      "False Positives (FP)": 288,
+      "False Negatives (FN)": 81,
+      "True Positives (TP)": 293,
+      "Train Accuracy": 0.7533,
+      "Accuracy Gen Gap": 0.0152,
+      "Train F1": 0.6344,
+      "F1 Gen Gap": 0.0208,
+      "Train ROC-AUC": 0.8492,
+      "ROC-AUC Gen Gap": 0.0075
+    },
+    "Random Forest": {
+      "Model": "Random Forest",
+      "Accuracy": 0.7573,
+      "Precision": 0.5287,
+      "Recall (Sensitivity)": 0.7888,
+      "Specificity": 0.7459,
+      "F1-Score": 0.633,
+      "ROC-AUC": 0.8434,
+      "Average Precision (AP)": 0.659,
+      "False Positive Rate (FPR)": 0.2541,
+      "False Negative Rate (FNR)": 0.2112,
+      "True Negatives (TN)": 772,
+      "False Positives (FP)": 263,
+      "False Negatives (FN)": 79,
+      "True Positives (TP)": 295,
+      "Train Accuracy": 0.8126,
+      "Accuracy Gen Gap": 0.0553,
+      "Train F1": 0.7146,
+      "F1 Gen Gap": 0.0816,
+      "Train ROC-AUC": 0.916,
+      "ROC-AUC Gen Gap": 0.0726
+    },
+    "Neural Network (MLP)": {
+      "Model": "Neural Network (MLP)",
+      "Accuracy": 0.7459,
+      "Precision": 0.5141,
+      "Recall (Sensitivity)": 0.7807,
+      "Specificity": 0.7333,
+      "F1-Score": 0.62,
+      "ROC-AUC": 0.8409,
+      "Average Precision (AP)": 0.6322,
+      "False Positive Rate (FPR)": 0.2667,
+      "False Negative Rate (FNR)": 0.2193,
+      "True Negatives (TN)": 759,
+      "False Positives (FP)": 276,
+      "False Negatives (FN)": 82,
+      "True Positives (TP)": 292,
+      "Train Accuracy": 0.7632,
+      "Accuracy Gen Gap": 0.0173,
+      "Train F1": 0.645,
+      "F1 Gen Gap": 0.025,
+      "Train ROC-AUC": 0.8637,
+      "ROC-AUC Gen Gap": 0.0228
+    }
+  },
+  "paired_bootstrap_empirical_cis": {
+    "iterations": 1000,
+    "random_seed": 42,
+    "resampling_method": "Paired percentile bootstrap on identical held-out test records",
+    "confidence_level": 0.95,
+    "results": {
+      "RF - LR": {
+        "accuracy": {
+          "mean_difference": 0.019,
+          "ci_95_low": 0.005,
+          "ci_95_high": 0.0341,
+          "ci_excludes_zero": true,
+          "note": "95% CI excludes zero (unadjusted for multiple comparisons)"
+        },
+        "f1": {
+          "mean_difference": 0.0193,
+          "ci_95_low": 0.0008,
+          "ci_95_high": 0.0403,
+          "ci_excludes_zero": true,
+          "note": "95% CI excludes zero (unadjusted for multiple comparisons)"
+        },
+        "roc_auc": {
+          "mean_difference": 0.0016,
+          "ci_95_low": -0.0063,
+          "ci_95_high": 0.0096,
+          "ci_excludes_zero": false,
+          "note": "Inconclusive (95% CI spans zero)"
+        },
+        "recall": {
+          "mean_difference": 0.0053,
+          "ci_95_low": -0.022,
+          "ci_95_high": 0.0331,
+          "ci_excludes_zero": false,
+          "note": "Inconclusive (95% CI spans zero)"
+        },
+        "precision": {
+          "mean_difference": 0.0242,
+          "ci_95_low": 0.0067,
+          "ci_95_high": 0.0431,
+          "ci_excludes_zero": true,
+          "note": "95% CI excludes zero (unadjusted for multiple comparisons)"
+        }
+      },
+      "NN - LR": {
+        "accuracy": {
+          "mean_difference": 0.0079,
+          "ci_95_low": -0.0021,
+          "ci_95_high": 0.0192,
+          "ci_excludes_zero": false,
+          "note": "Inconclusive (95% CI spans zero)"
+        },
+        "f1": {
+          "mean_difference": 0.0064,
+          "ci_95_low": -0.008,
+          "ci_95_high": 0.021,
+          "ci_excludes_zero": false,
+          "note": "Inconclusive (95% CI spans zero)"
+        },
+        "roc_auc": {
+          "mean_difference": -0.0007,
+          "ci_95_low": -0.0062,
+          "ci_95_high": 0.0047,
+          "ci_excludes_zero": false,
+          "note": "Inconclusive (95% CI spans zero)"
+        },
+        "recall": {
+          "mean_difference": -0.0026,
+          "ci_95_low": -0.0245,
+          "ci_95_high": 0.0206,
+          "ci_excludes_zero": false,
+          "note": "Inconclusive (95% CI spans zero)"
+        },
+        "precision": {
+          "mean_difference": 0.0099,
+          "ci_95_low": -0.0028,
+          "ci_95_high": 0.0239,
+          "ci_excludes_zero": false,
+          "note": "Inconclusive (95% CI spans zero)"
+        }
+      },
+      "RF - NN": {
+        "accuracy": {
+          "mean_difference": 0.0112,
+          "ci_95_low": -0.0028,
+          "ci_95_high": 0.0263,
+          "ci_excludes_zero": false,
+          "note": "Inconclusive (95% CI spans zero)"
+        },
+        "f1": {
+          "mean_difference": 0.0129,
+          "ci_95_low": -0.0068,
+          "ci_95_high": 0.0325,
+          "ci_excludes_zero": false,
+          "note": "Inconclusive (95% CI spans zero)"
+        },
+        "roc_auc": {
+          "mean_difference": 0.0023,
+          "ci_95_low": -0.0053,
+          "ci_95_high": 0.0105,
+          "ci_excludes_zero": false,
+          "note": "Inconclusive (95% CI spans zero)"
+        },
+        "recall": {
+          "mean_difference": 0.0079,
+          "ci_95_low": -0.0231,
+          "ci_95_high": 0.0379,
+          "ci_excludes_zero": false,
+          "note": "Inconclusive (95% CI spans zero)"
+        },
+        "precision": {
+          "mean_difference": 0.0143,
+          "ci_95_low": -0.0031,
+          "ci_95_high": 0.0333,
+          "ci_excludes_zero": false,
+          "note": "Inconclusive (95% CI spans zero)"
+        }
+      }
+    }
+  },
+  "validation_threshold_analysis": [
+    {
+      "Model": "Logistic Regression",
+      "Threshold": 0.35,
+      "Accuracy": 0.661,
+      "Precision": 0.43,
+      "Recall": 0.9051,
+      "Specificity": 0.5745,
+      "F1_Score": 0.583,
+      "TN": 478,
+      "FP": 354,
+      "FN": 28,
+      "TP": 267,
+      "Validation_N": 1127
+    },
+    {
+      "Model": "Logistic Regression",
+      "Threshold": 0.5,
+      "Accuracy": 0.7187,
+      "Precision": 0.4769,
+      "Recall": 0.7695,
+      "Specificity": 0.7007,
+      "F1_Score": 0.5888,
+      "TN": 583,
+      "FP": 249,
+      "FN": 68,
+      "TP": 227,
+      "Validation_N": 1127
+    },
+    {
+      "Model": "Logistic Regression",
+      "Threshold": 0.65,
+      "Accuracy": 0.772,
+      "Precision": 0.5546,
+      "Recall": 0.6542,
+      "Specificity": 0.8137,
+      "F1_Score": 0.6003,
+      "TN": 677,
+      "FP": 155,
+      "FN": 102,
+      "TP": 193,
+      "Validation_N": 1127
+    },
+    {
+      "Model": "Random Forest",
+      "Threshold": 0.35,
+      "Accuracy": 0.7134,
+      "Precision": 0.4766,
+      "Recall": 0.9661,
+      "Specificity": 0.6238,
+      "F1_Score": 0.6383,
+      "TN": 519,
+      "FP": 313,
+      "FN": 10,
+      "TP": 285,
+      "Validation_N": 1127
+    },
+    {
+      "Model": "Random Forest",
+      "Threshold": 0.5,
+      "Accuracy": 0.7844,
+      "Precision": 0.5558,
+      "Recall": 0.878,
+      "Specificity": 0.7512,
+      "F1_Score": 0.6807,
+      "TN": 625,
+      "FP": 207,
+      "FN": 36,
+      "TP": 259,
+      "Validation_N": 1127
+    },
+    {
+      "Model": "Random Forest",
+      "Threshold": 0.65,
+      "Accuracy": 0.8341,
+      "Precision": 0.6849,
+      "Recall": 0.678,
+      "Specificity": 0.8894,
+      "F1_Score": 0.6814,
+      "TN": 740,
+      "FP": 92,
+      "FN": 95,
+      "TP": 200,
+      "Validation_N": 1127
+    },
+    {
+      "Model": "Neural Network (MLP)",
+      "Threshold": 0.35,
+      "Accuracy": 0.6575,
+      "Precision": 0.4267,
+      "Recall": 0.8983,
+      "Specificity": 0.5721,
+      "F1_Score": 0.5786,
+      "TN": 476,
+      "FP": 356,
+      "FN": 30,
+      "TP": 265,
+      "Validation_N": 1127
+    },
+    {
+      "Model": "Neural Network (MLP)",
+      "Threshold": 0.5,
+      "Accuracy": 0.7267,
+      "Precision": 0.4861,
+      "Recall": 0.7695,
+      "Specificity": 0.7115,
+      "F1_Score": 0.5958,
+      "TN": 592,
+      "FP": 240,
+      "FN": 68,
+      "TP": 227,
+      "Validation_N": 1127
+    },
+    {
+      "Model": "Neural Network (MLP)",
+      "Threshold": 0.65,
+      "Accuracy": 0.7622,
+      "Precision": 0.5382,
+      "Recall": 0.6441,
+      "Specificity": 0.8041,
+      "F1_Score": 0.5864,
+      "TN": 669,
+      "FP": 163,
+      "FN": 105,
+      "TP": 190,
+      "Validation_N": 1127
+    }
+  ]
+}

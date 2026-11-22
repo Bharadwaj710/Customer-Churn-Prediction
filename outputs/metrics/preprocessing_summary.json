@@ -1,0 +1,67 @@
+{
+  "total_records": 7043,
+  "train_records": 5634,
+  "test_records": 1409,
+  "feature_count": 30,
+  "feature_names": [
+    "tenure",
+    "MonthlyCharges",
+    "TotalCharges",
+    "gender_Male",
+    "SeniorCitizen_1",
+    "Partner_Yes",
+    "Dependents_Yes",
+    "PhoneService_Yes",
+    "MultipleLines_No phone service",
+    "MultipleLines_Yes",
+    "InternetService_Fiber optic",
+    "InternetService_No",
+    "OnlineSecurity_No internet service",
+    "OnlineSecurity_Yes",
+    "OnlineBackup_No internet service",
+    "OnlineBackup_Yes",
+    "DeviceProtection_No internet service",
+    "DeviceProtection_Yes",
+    "TechSupport_No internet service",
+    "TechSupport_Yes",
+    "StreamingTV_No internet service",
+    "StreamingTV_Yes",
+    "StreamingMovies_No internet service",
+    "StreamingMovies_Yes",
+    "Contract_One year",
+    "Contract_Two year",
+    "PaperlessBilling_Yes",
+    "PaymentMethod_Credit card (automatic)",
+    "PaymentMethod_Electronic check",
+    "PaymentMethod_Mailed check"
+  ],
+  "train_class_distribution": {
+    "retained_0": 4139,
+    "churned_1": 1495,
+    "churn_rate_pct": 26.54
+  },
+  "test_class_distribution": {
+    "retained_0": 1035,
+    "churned_1": 374,
+    "churn_rate_pct": 26.54
+  },
+  "training_scaler_parameters": {
+    "tenure": {
+      "mean": 32.48509052183174,
+      "scale_std": 24.56656301538815
+    },
+    "MonthlyCharges": {
+      "mean": 64.92996095136671,
+      "scale_std": 30.135430576006627
+    },
+    "TotalCharges": {
+      "mean": 2299.33468228612,
+      "scale_std": 2279.001996496138
+    }
+  },
+  "imbalance_ratio": 2.77,
+  "class_weight_balanced": {
+    "0": 0.6806,
+    "1": 1.8843
+  }
+}

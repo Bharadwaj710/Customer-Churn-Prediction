@@ -1,0 +1,4 @@
+"""
+src/dashboard package initialization.
+"""
+

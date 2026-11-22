@@ -1,0 +1,4 @@
+"""
+src/dashboard/tabs initialization.
+"""
+
